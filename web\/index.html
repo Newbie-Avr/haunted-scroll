@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090610">
+  <meta name="description" content="Break the endless scroll. Set your limit and reclaim your time with Haunted Scroll.">
+  <title>Trick or Treat | Haunted Scroll</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Haunted Scroll home">
+      <span class="brand-icon">☠</span> HAUNTED SCROLL
+    </a>
+    <span class="tag">BREAK THE CURSE OF ENDLESS SCROLLING</span>
+  </header>
+
+  <main class="dashboard">
+    <section class="intro">
+      <p class="eyebrow"><span class="status-dot"></span> THE GHOST IS WATCHING</p>
+      <h1>One more Reel?<br><span>The ghost says NO.</span></h1>
+      <p class="description">
+        Every swipe takes a little piece of your time.
+        Set your limit, enjoy your videos, and escape the endless scroll.
+      </p>
+
+      <div class="feature-row">
+        <div class="feature-icon">☾</div>
+        <div>
+          <strong>Take back your time</strong>
+          <p>Your attention is worth more than another scroll.</p>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-icon">✦</div>
+        <div>
+          <strong>Choose your own limit</strong>
+          <p>Small changes can make room for better habits.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="control-panel">
+      <div class="panel-heading">
+        <span>YOUR DAILY CURSE</span>
+        <span class="moon">☾</span>
+      </div>
+
+      <div class="counter">
+        <span id="watched">0</span>
+        <span class="slash">/</span>
+        <span id="limitLabel">15</span>
+      </div>
+      <p class="muted">short videos watched today</p>
+
+      <label for="limitSlider">Choose your daily limit</label>
+      <div class="slider-line">
+        <input id="limitSlider" type="range" min="5" max="100" step="5" value="15">
+        <strong id="sliderValue">15</strong>
+      </div>
+      <div class="range-labels">
+        <span>5 videos</span>
+        <span>100 videos</span>
+      </div>
+
+      <div class="progress-track">
+        <div id="progress"></div>
+      </div>
+      <p id="remaining" class="remaining">15 videos left before the curse.</p>
+
+      <button id="watchButton" class="primary">
+        <span>＋</span> Simulate watching a video
+      </button>
+      <button id="resetButton" class="secondary">Reset demo</button>
+
+      <p class="note">
+        This is a website demo. Its counter is separate from your browser extension.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span>TRICK OR TREAT</span>
+    <span class="footer-separator">✦</span>
+    SCROLL LESS · LIVE MORE
+  </footer>
+
+  <!-- Full-screen haunted takeover -->
+  <section id="ghostOverlay" class="ghost-overlay"
+    aria-hidden="true" aria-labelledby="ghostTitle" role="dialog">
+
+    <div class="moonlight"></div>
+    <div class="fog fog-left"></div>
+    <div class="fog fog-right"></div>
+    <div class="bat bat-one">⌁</div>
+    <div class="bat bat-two">⌁</div>
+    <div class="grave grave-left"></div>
+    <div class="grave grave-right"></div>
+
+    <div class="haunt-content">
+      <p class="warning"><span></span> YOU HAVE AWAKENED THE GHOST</p>
+
+      <div class="ghost-scene" aria-hidden="true">
+        <div class="ghost-aura"></div>
+        <div class="ghost-character">
+          <div class="ghost-sheet">
+            <div class="ghost-eyes">
+              <i></i>
+              <i></i>
+            </div>
+            <div class="ghost-mouth"></div>
+            <div class="ghost-bottom"></div>
+          </div>
+        </div>
+        <div class="ghost-shadow"></div>
+        <div class="ghost-particle particle-one">✦</div>
+        <div class="ghost-particle particle-two">✧</div>
+        <div class="ghost-particle particle-three">✦</div>
+      </div>
+
+      <p class="overline">THE CURSE HAS BEEN TRIGGERED</p>
+      <h2 id="ghostTitle">BOO! THAT'S ENOUGH!</h2>
+
+      <p class="ghost-message">
+        You've reached your daily limit.<br>
+        The endless scroll ends here.<br>
+        <strong>Your time belongs to YOU.</strong>
+      </p>
+
+      <div class="mindful-section">
+        <p class="mindful-heading">BREAK THE CURSE. TRY SOMETHING REAL.</p>
+
+        <div class="activity-grid">
+          <article class="activity-card">
+            <span class="activity-icon">📖</span>
+            <h3>Read a little</h3>
+            <p>Read 5 pages of a book or learn something new.</p>
+          </article>
+
+          <article class="activity-card">
+            <span class="activity-icon">🌿</span>
+            <h3>Move your body</h3>
+            <p>Stretch, take a short walk, or get some fresh air.</p>
+          </article>
+
+          <article class="activity-card">
+            <span class="activity-icon">✍</span>
+            <h3>Clear your mind</h3>
+            <p>Write in a journal or plan one thing for tomorrow.</p>
+          </article>
+
+          <article class="activity-card">
+            <span class="activity-icon">☕</span>
+            <h3>Reconnect</h3>
+            <p>Talk to a friend, help someone, or enjoy a quiet break.</p>
+          </article>
+        </div>
+      </div>
+
+      <p class="tomorrow">
+        <span class="star">✦</span>
+        YOUR NEXT TREAT ARRIVES TOMORROW
+        <span class="star">✦</span>
+      </p>
+
+      <button id="escapeButton" class="escape-button">
+        I'LL TAKE A BREAK
+      </button>
+      <p class="escape-note">The ghost may leave. Your daily limit still stands.</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
