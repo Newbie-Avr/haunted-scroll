@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haunted Scroll</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      width: 320px;
+      margin: 0;
+      padding: 18px;
+      overflow: hidden;
+      border-radius: 20px;
+      color: #fff4ff;
+      background: radial-gradient(circle at top right, #48204e, #0b0711 65%);
+      font: 13px system-ui, sans-serif;
+    }
+
+    .panel {
+      padding: 17px;
+      border: 1px solid #a879ff38;
+      border-radius: 18px;
+      background: #120c1bdc;
+      box-shadow: 0 12px 35px #0005;
+    }
+
+    header { display: flex; justify-content: space-between; align-items: center; }
+    .brand { color: #ff843e; font-weight: 900; letter-spacing: 1px; }
+    .ghost { font-size: 23px; color: #d3b6ff; }
+    .eyebrow { margin: 20px 0 8px; color: #c5a0ed; font-size: 10px; letter-spacing: 2px; }
+    .count { font-size: 38px; font-weight: 900; }
+    .count span { color: #ff843e; }
+    .sub { color: #b2a3c0; font-size: 11px; }
+
+    .track { height: 8px; margin: 14px 0 8px; overflow: hidden; border-radius: 20px; background: #382842; }
+    #progress { width: 0; height: 100%; border-radius: 20px; background: linear-gradient(90deg, #a879ff, #ff843e); transition: width .3s; }
+    #message { min-height: 16px; color: #ffbd8f; font-size: 11px; }
+
+    .label { display: flex; justify-content: space-between; margin-top: 19px; }
+    #chosen { color: #ffad42; font-weight: bold; }
+    input { width: 100%; margin: 13px 0; accent-color: #ff843e; }
+    .range { display: flex; justify-content: space-between; color: #95869f; font-size: 10px; }
+
+    button {
+      width: 100%;
+      margin-top: 12px;
+      padding: 11px;
+      border: 1px solid #654776;
+      border-radius: 10px;
+      background: #25152e;
+      color: #fff4ff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: #3a2146; }
+    .reset { color: #c4b2d2; font-size: 11px; }
+    .footer { margin-top: 15px; color: #86738f; font-size: 9px; text-align: center; letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <header>
+      <div class="brand">HAUNTED SCROLL</div>
+      <div class="ghost">☠</div>
+    </header>
+
+    <p class="eyebrow">YOUR DAILY CURSE</p>
+    <div class="count"><span id="count">0</span> / <span id="limitValue">15</span></div>
+    <div class="sub">short videos watched today</div>
+
+    <div class="track"><div id="progress"></div></div>
+    <p id="message" aria-live="polite">Loading...</p>
+
+    <label class="label" for="limit">
+      <span>Daily video limit</span>
+      <strong id="chosen">15</strong>
+    </label>
+    <input id="limit" type="range" min="5" max="100" step="5" value="15">
+    <div class="range"><span>5 videos</span><span>100 videos</span></div>
+
+    <button id="reset" class="reset">Reset today's counter</button>
+    <div class="footer">SCROLL LESS · LIVE MORE</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

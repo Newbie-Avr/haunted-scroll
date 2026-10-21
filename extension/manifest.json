@@ -1,0 +1,29 @@
+
+{
+  "manifest_version": 3,
+  "name": "Trick or Treat - Haunted Scroll",
+  "version": "1.2.0",
+  "description": "Set a daily short-video limit and escape the haunted scroll.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://www.instagram.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://www.instagram.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Haunted Scroll",
+    "default_popup": "popup.html"
+  }
+}
